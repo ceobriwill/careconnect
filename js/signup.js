@@ -1,25 +1,18 @@
 // js/signup.js
 import { supabase } from "./supabaseClient.js";
 
+const form = document.getElementById("signupForm");
+const message = document.getElementById("message");
+
 function showMessage(text, type = "") {
   message.textContent = text;
   message.className = type;
 }
 
-const roleSelect = document.getElementById("role");
-const doctorFields = document.getElementById("doctorFields");
-const form = document.getElementById("signupForm");
-const message = document.getElementById("message");
-
-roleSelect.addEventListener("change", () => {
-  doctorFields.style.display = roleSelect.value === "doctor" ? "block" : "none";
-});
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  message.textContent = "Creating account...";
+  showMessage("Creating account...");
 
-  const role = roleSelect.value;
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const dob = document.getElementById("dob").value;
@@ -39,29 +32,14 @@ form.addEventListener("submit", async (e) => {
 
   const authUserId = authData.user.id;
 
-  let profileError;
-  if (role === "patient") {
-    const { error } = await supabase.from("patient").insert({
-      first_name: firstName,
-      last_name: lastName,
-      phone,
-      email,
-      dob,
-      auth_user_id: authUserId,
-    });
-    profileError = error;
-  } else {
-    const specialty = document.getElementById("specialty").value;
-    const { error } = await supabase.from("doctor").insert({
-      first_name: firstName,
-      last_name: lastName,
-      phone,
-      email,
-      specialty,
-      auth_user_id: authUserId,
-    });
-    profileError = error;
-  }
+  const { error: profileError } = await supabase.from("patient").insert({
+    first_name: firstName,
+    last_name: lastName,
+    phone,
+    email,
+    dob,
+    auth_user_id: authUserId,
+  });
 
   if (profileError) {
     showMessage(
