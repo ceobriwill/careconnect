@@ -2,7 +2,7 @@
 import { supabase } from "./supabaseClient.js";
 
 // Simple shared secret — an Admin gives this out to new hires.
-const STAFF_INVITE_CODE = "careconnect-staff-2026";
+const STAFF_INVITE_CODE = "princewill";
 
 const form = document.getElementById("staffSignupForm");
 const message = document.getElementById("message");
