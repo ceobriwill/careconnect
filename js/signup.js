@@ -49,8 +49,5 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  showMessage(
-    "Account created! Check your email to confirm, then log in.",
-    "success",
-  );
+  showMessage("Account created! You can log in now.", "success");
 });
