@@ -1,0 +1,64 @@
+<!-- reports.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Reports</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>Attendance &amp; Doctor Utilization</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <form id="rangeForm" class="auth-card">
+        <label for="startDate">From</label>
+        <input type="date" id="startDate" required />
+
+        <label for="endDate">To</label>
+        <input type="date" id="endDate" required />
+
+        <button type="submit">Run Report</button>
+      </form>
+
+      <p id="message"></p>
+
+      <section>
+        <h2>Attendance Summary</h2>
+        <table id="attendanceTable">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceBody"></tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Doctor Utilization</h2>
+        <table id="utilizationTable">
+          <thead>
+            <tr>
+              <th>Doctor</th>
+              <th>Total Appointments</th>
+              <th>Completed</th>
+              <th>No-show</th>
+              <th>Cancelled</th>
+              <th>Completion Rate</th>
+            </tr>
+          </thead>
+          <tbody id="utilizationBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="js/reports.js"></script>
+  </body>
+</html>

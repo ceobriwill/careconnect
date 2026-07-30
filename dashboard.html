@@ -1,0 +1,56 @@
+<!-- dashboard.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>CareConnect Dashboard</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <nav id="staffNav" style="display: none">
+      <a href="appointments.html">All Appointments</a>
+      <a href="patients.html">Patient Search</a>
+      <a href="reports.html" id="reportsLink">Reports</a>
+    </nav>
+
+    <main>
+      <section id="urgentSection">
+        <h2>Starting Soon</h2>
+        <p id="urgentEmpty" style="display: none">
+          Nothing in the next 30 minutes.
+        </p>
+        <ul id="urgentList"></ul>
+      </section>
+
+      <section id="todaySection">
+        <h2>Today's Appointments</h2>
+        <p id="todayEmpty" style="display: none">
+          No appointments scheduled for today.
+        </p>
+        <table id="todayTable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Patient</th>
+              <th>Doctor</th>
+              <th>Status</th>
+              <th>Reason</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="todayTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+  </body>
+</html>

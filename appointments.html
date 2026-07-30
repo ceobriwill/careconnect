@@ -1,0 +1,62 @@
+<!-- appointments.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — All Appointments</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>All Appointments</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <form id="filterForm" class="auth-card">
+        <label for="startDate">From</label>
+        <input type="date" id="startDate" />
+
+        <label for="endDate">To</label>
+        <input type="date" id="endDate" />
+
+        <label for="doctorFilter">Doctor</label>
+        <select id="doctorFilter">
+          <option value="">All doctors</option>
+        </select>
+
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="Booked">Booked</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="No-show">No-show</option>
+        </select>
+
+        <button type="submit">Filter</button>
+      </form>
+
+      <p id="message"></p>
+
+      <table id="apptTable">
+        <thead>
+          <tr>
+            <th>Date &amp; Time</th>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Status</th>
+            <th>Reason</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="apptTableBody"></tbody>
+      </table>
+    </main>
+
+    <script type="module" src="js/appointments.js"></script>
+  </body>
+</html>

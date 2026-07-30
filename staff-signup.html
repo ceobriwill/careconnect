@@ -1,0 +1,45 @@
+<!-- staff-signup.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Staff Sign Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="auth-card">
+      <h1>Create a staff account</h1>
+
+      <form id="staffSignupForm">
+        <label for="inviteCode">Invite Code</label>
+        <input type="text" id="inviteCode" required />
+
+        <label for="role">Role</label>
+        <select id="role" required>
+          <option value="Nurse">Nurse</option>
+          <option value="Admin">Admin</option>
+          <option value="Manager">Manager</option>
+        </select>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" minlength="6" required />
+
+        <button type="submit">Create Staff Account</button>
+      </form>
+
+      <p id="message"></p>
+      <p>Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+
+    <script type="module" src="js/staff-signup.js"></script>
+  </body>
+</html>

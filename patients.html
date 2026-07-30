@@ -1,0 +1,54 @@
+<!-- patients.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Patient Search</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>Patient Search</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <form id="searchForm" class="auth-card">
+        <label for="searchTerm">Search by name or patient ID</label>
+        <input type="text" id="searchTerm" placeholder="e.g. Adebayo or 42" />
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="message"></p>
+
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+
+      <section id="detailSection" style="display: none" class="auth-card">
+        <h2 id="detailName"></h2>
+        <p id="detailContact"></p>
+
+        <h3>Appointments</h3>
+        <ul id="detailAppointments"></ul>
+
+        <h3>Medical Records</h3>
+        <ul id="detailRecords"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="js/patients.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!-- booking.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Book an Appointment</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>Book an Appointment</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <form id="bookingForm" class="auth-card" novalidate>
+        <label for="doctor">Doctor</label>
+        <select id="doctor" required>
+          <option value="">Loading doctors...</option>
+        </select>
+
+        <label for="dateTime">Date &amp; Time</label>
+        <input type="datetime-local" id="dateTime" required />
+
+        <label for="reason">Reason for visit</label>
+        <input type="text" id="reason" maxlength="150" />
+
+        <button type="submit">Book Appointment</button>
+      </form>
+
+      <p id="message"></p>
+
+      <section>
+        <h2>Your Upcoming Appointments</h2>
+        <p id="myApptsEmpty" style="display: none">
+          You have no upcoming appointments.
+        </p>
+        <ul id="myApptsList"></ul>
+      </section>
+
+      <section>
+        <h2>Reminders</h2>
+        <p id="reminderEmpty" style="display: none">No reminders right now.</p>
+        <ul id="reminderList"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="js/booking.js"></script>
+  </body>
+</html>

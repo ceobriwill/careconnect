@@ -1,0 +1,40 @@
+<!-- record.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CareConnect — Medical Record</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <h1>Medical Record</h1>
+      <div>
+        <span id="whoami"></span>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="apptInfo" class="auth-card">
+        <p id="apptInfoText">Loading appointment...</p>
+      </section>
+
+      <form id="recordForm" class="auth-card">
+        <label for="diagnosis">Diagnosis</label>
+        <input type="text" id="diagnosis" maxlength="200" />
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="6"></textarea>
+
+        <button type="submit" id="saveBtn">Save Record</button>
+      </form>
+
+      <p id="message"></p>
+
+      <p><a href="dashboard.html">&larr; Back to dashboard</a></p>
+    </main>
+
+    <script type="module" src="js/record.js"></script>
+  </body>
+</html>
